@@ -33,7 +33,7 @@ const useQueryState = fn => initialQuery => {
       setQuery(newQuery)
       if (isNavigate) {
         const encodedQuery = encode(newQuery)
-        const symbol = query !== '' ? '?' : ''
+        const symbol = encodedQuery !== '' ? '?' : ''
         const newUrl = `${window.location.pathname}${symbol}${encodedQuery}`
         fn(newUrl)
       }
