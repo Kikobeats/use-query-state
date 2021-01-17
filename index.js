@@ -1,2 +1,2 @@
 import create from './create'
-export default create(url => window.history.pushState('', '', url))
+export default create(newUrl => window.history.pushState('', '', newUrl))

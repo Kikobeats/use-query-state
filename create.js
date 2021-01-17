@@ -7,21 +7,11 @@ const isSSR = typeof window === 'undefined'
 
 const fromLocation = isSSR
   ? () => ({})
-  : () => {
-      const urlObj = new URL(window.location)
-      const query = Object.fromEntries(urlObj.searchParams.entries())
-      const decodeQuery = Object.keys(query).reduce(
-        (acc, key) => ({ ...acc, [key]: decode(query[key]) }),
-        {}
-      )
-      return decodeQuery
-    }
-
-const noop = () => {}
+  : () => decode(window.location.search.substring(1))
 
 const condition = isSSR ? [] : [window.location.search]
 
-const useQueryState = (fn = noop) => initialQuery => {
+const useQueryState = fn => initialQuery => {
   const [query, setQuery] = react.useState(
     initialQuery ? flatten(initialQuery) : fromLocation()
   )
