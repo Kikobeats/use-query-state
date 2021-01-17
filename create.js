@@ -1,22 +1,30 @@
 import { dequal as isEqual } from 'dequal'
 import { flatten, unflatten } from 'flat'
-import { encode, decode } from 'qss'
-import react from 'react'
+import { useState, useEffect } from 'react'
+import { encode } from 'qss'
 
 const isSSR = typeof window === 'undefined'
 
 const fromLocation = isSSR
   ? () => ({})
-  : () => decode(window.location.search.substring(1))
+  : () => {
+      const urlObj = new URL(window.location)
+      const query = Object.fromEntries(urlObj.searchParams.entries())
+      const decodeQuery = Object.keys(query).reduce(
+        (acc, key) => ({ ...acc, [key]: decodeURIComponent(query[key]) }),
+        {}
+      )
+      return decodeQuery
+    }
 
 const condition = isSSR ? [] : [window.location.search]
 
 const useQueryState = fn => initialQuery => {
-  const [query, setQuery] = react.useState(
+  const [query, setQuery] = useState(
     initialQuery ? flatten(initialQuery) : fromLocation()
   )
 
-  react.useEffect(() => {
+  useEffect(() => {
     const newQuery = fromLocation()
     if (!isEqual(query, newQuery)) setQuery(newQuery)
   }, condition)
