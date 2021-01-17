@@ -1,33 +1,30 @@
 # use-query-state
 
+> React hook for sharing state via URL.
 
-![Last version](https://img.shields.io/github/tag/Kikobeats/use-query-state.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/com/Kikobeats/use-query-state/master.svg?style=flat-square)](https://travis-ci.com/Kikobeats/use-query-state)
-[![Coverage Status](https://img.shields.io/coveralls/Kikobeats/use-query-state.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/use-query-state)
-[![Dependency status](https://img.shields.io/david/Kikobeats/use-query-state.svg?style=flat-square)](https://david-dm.org/Kikobeats/use-query-state)
-[![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/use-query-state.svg?style=flat-square)](https://david-dm.org/Kikobeats/use-query-state#info=devDependencies)
-[![NPM Status](https://img.shields.io/npm/dm/use-query-state.svg?style=flat-square)](https://www.npmjs.org/package/use-query-state)
-
-> React hook to set/retrieve state from URL query string.
-
-## Install
+## Installation
 
 ```bash
 $ npm install @Kikobeats/use-query-state --save
 ```
 
-## Usage
-
-```js
-import useQueryState = require('use-query-state')
-
-useQueryState('do something')
-// => return something
-```
-
 ### for Next.js
 
+Since [Next.js doesn't support ES Modules yet](https://github.com/vercel/next.js/issues/706), you need to installt [`next-transpile-modules`](https://github.com/martpie/next-transpile-modules) in order to make possible use the hook on Next.js:
+
+```js
+const withTM = require('next-transpile-modules')(['@kikobeats/use-query-state'])
+
+const nextConfig = {}
+
+module.exports = withTM(withOffline(nextConfig))
+```
+
 ### for Gatsby
+
+```jsx
+import useQueryState from '@kikobeats/use-query-state/gatsby'
+```
 
 ## License
 
