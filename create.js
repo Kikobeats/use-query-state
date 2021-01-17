@@ -1,4 +1,4 @@
-import isEqual from 'fast-deep-equal/es6/react'
+import { dequal as isEqual } from 'dequal'
 import { flatten, unflatten } from 'flat'
 import { encode, decode } from 'qss'
 import react from 'react'
