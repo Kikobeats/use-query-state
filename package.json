@@ -50,9 +50,9 @@
     "node": ">= 12"
   },
   "files": [
+    "create.js",
     "gatsby.js",
-    "index.js",
-    "next.js"
+    "index.js"
   ],
   "scripts": {
     "clean": "rm -rf node_modules",
@@ -92,7 +92,9 @@
     ]
   },
   "peerDependencies": {
-    "react": "^17"
+    "gatsby": "*",
+    "reac-dom": "^16",
+    "react": "^16"
   },
   "type": "module"
 }
