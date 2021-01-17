@@ -2,7 +2,7 @@
   "name": "@kikobeats/use-query-state",
   "description": "React hook to set/retrieve state from URL query string",
   "homepage": "https://nicedoc.io/Kikobeats/use-query-state",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
