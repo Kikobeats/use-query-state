@@ -43,7 +43,6 @@
     "prettier-standard": "latest",
     "react": "latest",
     "standard": "latest",
-    "standard-markdown": "latest",
     "standard-version": "latest"
   },
   "engines": {
@@ -57,7 +56,7 @@
   "scripts": {
     "clean": "rm -rf node_modules",
     "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
-    "lint": "standard-markdown README.md && standard",
+    "lint": "standard",
     "postrelease": "npm run release:tags && npm run release:github && npm publish",
     "prerelease": "git-dirty && npm run update:check && npm test && npm run contributors",
     "pretest": "npm run lint",
@@ -86,9 +85,6 @@
     ],
     "*.js": [
       "prettier-standard"
-    ],
-    "*.md": [
-      "standard-markdown"
     ]
   },
   "peerDependencies": {
