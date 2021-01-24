@@ -88,8 +88,8 @@
     ]
   },
   "peerDependencies": {
-    "react-dom": "^16",
-    "react": "^16"
+    "react": "^16",
+    "react-dom": "^16"
   },
   "type": "module"
 }
