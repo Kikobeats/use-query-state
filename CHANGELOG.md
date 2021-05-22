@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/Kikobeats/use-query-state/compare/v1.0.4...v1.0.5) (2021-05-22)
+
+
+### Bug Fixes
+
+* file extension ([8fc7c81](https://github.com/Kikobeats/use-query-state/commit/8fc7c81116e7f8d2022fc50f826b610c9b58dc65))
+
 ### [1.0.4](https://github.com/Kikobeats/use-query-state/compare/v1.0.3...v1.0.4) (2021-03-23)
 
 ### [1.0.3](https://github.com/Kikobeats/use-query-state/compare/v1.0.2...v1.0.3) (2021-01-24)
