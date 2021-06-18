@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/Kikobeats/use-query-state/compare/v1.0.5...v1.0.6) (2021-06-18)
+
+
+### Bug Fixes
+
+* gatsby navigate interface ([9b1701a](https://github.com/Kikobeats/use-query-state/commit/9b1701ae154854bade706f9cd021f264cfa514b5))
+
 ### [1.0.5](https://github.com/Kikobeats/use-query-state/compare/v1.0.4...v1.0.5) (2021-05-22)
 
 
