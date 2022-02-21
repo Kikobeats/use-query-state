@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/Kikobeats/use-query-state/compare/v1.0.6...v1.1.0) (2022-02-21)
+
+
+### Features
+
+* use URLSearchParams constructor ([651de25](https://github.com/Kikobeats/use-query-state/commit/651de251f0d8867bbeefb4f16b98f8b18fcd5675))
+
 ### [1.0.6](https://github.com/Kikobeats/use-query-state/compare/v1.0.5...v1.0.6) (2021-06-18)
 
 
