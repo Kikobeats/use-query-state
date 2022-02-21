@@ -5,25 +5,9 @@ import { encode } from 'qss'
 
 const isSSR = typeof window === 'undefined'
 
-const safeDecode = value => {
-  try {
-    return decodeURIComponent(value)
-  } catch (_) {
-    return value
-  }
-}
-
 const fromLocation = isSSR
   ? () => ({})
-  : () => {
-      const urlObj = new URL(window.location)
-      const query = Object.fromEntries(urlObj.searchParams.entries())
-      const decodeQuery = Object.keys(query).reduce(
-        (acc, key) => ({ ...acc, [key]: safeDecode(query[key]) }),
-        {}
-      )
-      return decodeQuery
-    }
+  : () => Object.fromEntries(new URLSearchParams(window.location.search))
 
 const condition = isSSR ? [] : [window.location.search]
 
