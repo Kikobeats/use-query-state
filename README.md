@@ -47,6 +47,8 @@ const [query, setQuery] = useQueryState(undefined, parsedQuery =>
 )
 ```
 
+## Integration
+
 ### for Next.js
 
 Since [Next.js doesn't support ES Modules yet](https://github.com/vercel/next.js/issues/706), you need to install [`next-transpile-modules`](https://github.com/martpie/next-transpile-modules) in order to make possible use the hook on Next.js:
