@@ -11,9 +11,11 @@ const fromLocation = isSSR
 
 const condition = isSSR ? [] : [window.location.search]
 
-const useQueryState = fn => initialQuery => {
+const identity = value => value
+
+const useQueryState = fn => (initialQuery, mapper = identity) => {
   const [query, setQuery] = useState(
-    initialQuery ? flatten(initialQuery) : fromLocation()
+    initialQuery ? flatten(initialQuery) : mapper(fromLocation())
   )
 
   useEffect(() => {
