@@ -1,6 +1,7 @@
-import { dequal as isEqual } from 'dequal'
-import { flatten, unflatten } from 'flat'
 import { useState, useEffect } from 'react'
+import { dequal as isEqual } from 'dequal'
+import { flattie } from 'flattie'
+import { nestie } from 'nestie'
 import { encode } from 'qss'
 
 const isSSR = typeof window === 'undefined'
@@ -15,7 +16,7 @@ const identity = value => value
 
 const useQueryState = fn => (initialQuery, mapper = identity) => {
   const [query, setQuery] = useState(
-    initialQuery ? flatten(initialQuery) : mapper(fromLocation())
+    initialQuery ? flattie(initialQuery) : mapper(fromLocation())
   )
 
   useEffect(() => {
@@ -28,8 +29,8 @@ const useQueryState = fn => (initialQuery, mapper = identity) => {
     { replace = false, navigate: isNavigate = true } = {}
   ) => {
     const newQuery = replace
-      ? flatten(obj)
-      : { ...fromLocation(), ...flatten(obj) }
+      ? flattie(obj)
+      : { ...fromLocation(), ...flattie(obj) }
 
     if (!isEqual(query, newQuery)) {
       setQuery(newQuery)
@@ -41,7 +42,7 @@ const useQueryState = fn => (initialQuery, mapper = identity) => {
     }
   }
 
-  return [unflatten(query), set]
+  return [nestie(query), set]
 }
 
 export default useQueryState
