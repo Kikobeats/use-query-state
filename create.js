@@ -42,7 +42,7 @@ const useQueryState = fn => (initialQuery, mapper = identity) => {
     }
   }
 
-  return [nestie(query), set]
+  return [nestie(query) || {}, set]
 }
 
 export default useQueryState
