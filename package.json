@@ -83,8 +83,8 @@
     ]
   },
   "peerDependencies": {
-    "react": "^17",
-    "react-dom": "^17"
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
   },
   "simple-git-hooks": {
     "commit-msg": "npx commitlint --edit",
