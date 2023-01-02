@@ -1,7 +1,7 @@
 {
   "name": "@kikobeats/use-query-state",
   "description": "React hook to set/retrieve state from URL query string",
-  "homepage": "https://nicedoc.io/Kikobeats/use-query-state",
+  "homepage": "https://github.com/Kikobeats/use-query-state",
   "version": "1.2.1",
   "main": "index.js",
   "author": {
@@ -55,7 +55,7 @@
   ],
   "scripts": {
     "clean": "rm -rf node_modules",
-    "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
+    "contributors": "(npx git-authors-cli && npx finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "lint": "standard",
     "postrelease": "npm run release:tags && npm run release:github && npm publish",
     "prerelease": "git-dirty && npm run update:check && npm test && npm run contributors",
