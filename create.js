@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { dequal as isEqual } from 'dequal'
 import { flattie } from 'flattie'
 import { nestie } from 'nestie'
-import { encode } from 'qss'
 
 const isSSR = typeof window === 'undefined'
 
@@ -36,7 +35,7 @@ const useQueryState = fn => (initialQuery, mapper = identity) => {
       setQuery(newQuery)
       if (isNavigate) {
         const url = new URL(window.location.toString())
-        url.search = new URLSearchParams(encode(newQuery))
+        url.search = new URLSearchParams(newQuery)
         fn(url)
       }
     }
