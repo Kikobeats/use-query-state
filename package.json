@@ -1,6 +1,6 @@
 {
   "name": "@kikobeats/use-query-state",
-  "description": "React hook to set/retrieve state from URL query string",
+  "description": "React hook to sync component state with the URL query string — works with Next.js, Gatsby, and SSR.",
   "homepage": "https://github.com/Kikobeats/use-query-state",
   "version": "1.2.2",
   "main": "index.js",
@@ -19,11 +19,14 @@
   "keywords": [
     "gatsby",
     "hook",
-    "next",
     "nextjs",
     "query",
+    "querystring",
+    "react",
+    "router",
     "ssr",
-    "state"
+    "state",
+    "url"
   ],
   "dependencies": {
     "dequal": "~2.0.2",
@@ -33,13 +36,11 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@ksmithut/prettier-standard": "latest",
-    "conventional-github-releaser": "latest",
     "finepack": "latest",
     "git-authors-cli": "latest",
     "git-dirty": "latest",
+    "github-generate-release": "latest",
     "nano-staged": "latest",
-    "npm-check-updates": "latest",
     "react": "latest",
     "simple-git-hooks": "latest",
     "standard": "latest",
@@ -61,21 +62,24 @@
     "prerelease": "git-dirty && npm run update:check && npm test && npm run contributors",
     "pretest": "npm run lint",
     "release": "git-authors-cli finepack && git add package.json && standard-version -a",
-    "release:github": "conventional-github-releaser -p angular",
+    "release:github": "github-generate-release",
     "release:tags": "git push --follow-tags origin master",
-    "test": "exit 0",
-    "update": "ncu -u",
-    "update:check": "ncu -- --error-level 2"
+    "test": "exit 0"
   },
   "license": "MIT",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
+    ],
+    "rules": {
+      "body-max-line-length": [
+        0
+      ]
+    }
   },
   "nano-staged": {
     "*.js": [
-      "prettier-standard",
+      "npx @kikobeats/prettier-standard",
       "standard --fix"
     ],
     "package.json": [
